@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penugasan 3 Assemblr EDU - Dwi Rachmawati, S.Sos</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333333;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #4a90e2;
+            padding-bottom: 30px;
+            margin-bottom: 35px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .header h2 {
+            margin: 10px 0 20px 0;
+            color: #4a90e2;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .profile-table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .profile-table td {
+            padding: 12px 20px;
+            font-size: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .profile-table td.label {
+            font-weight: 600;
+            color: #4a5568;
+            width: 35%;
+            background: #edf2f7;
+        }
+        .main-content {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid #4a90e2;
+            padding-left: 10px;
+        }
+        .instructions {
+            background-color: #ebf8ff;
+            border: 1px solid #bee3f8;
+            color: #2b6cb0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        .assemblr-frame-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid #cbd5e0;
+            background-color: #000000;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .assemblr-frame-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .quiz-section {
+            background-color: #fcfcfc;
+            border: 1px solid #e2e8f0;
+            padding: 30px;
+            border-radius: 10px;
+            border-top: 4px solid #38a169;
+        }
+        .quiz-title {
+            font-size: 20px;
+            color: #276749;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .question-block {
+            margin-bottom: 25px;
+        }
+        .question-text {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #2d3748;
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .option-item {
+            margin-bottom: 10px;
+        }
+        .option-item label {
+            display: block;
+            padding: 12px 15px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 15px;
+        }
+        .option-item label:hover {
+            background-color: #f7fafc;
+            border-color: #cbd5e0;
+        }
+        .option-item input[type="radio"] {
+            margin-right: 12px;
+            transform: scale(1.1);
+            vertical-align: middle;
+        }
+        .submit-btn {
+            background-color: #38a169;
+            color: #ffffff;
+            border: none;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s ease;
+            box-shadow: 0 4px 6px rgba(56, 161, 105, 0.15);
+        }
+        .submit-btn:hover {
+            background-color: #2f855a;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 13px;
+            color: #718096;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Informasi Penugasan & Profil Lengkap -->
+    <div class="header">
+        <h1>Alat Peraga Digital Berbasis 3D/AR</h1>
+        <h2>Penugasan 3 - Kelas Assemblr EDU</h2>
+        
+        <table class="profile-table">
+            <tr>
+                <td class="label">Nama Lengkap</td>
+                <td>Dwi Rachmawati, S.Sos</td>
+            </tr>
+            <tr>
+                <td class="label">Mata Pelajaran</td>
+                <td>Sosiologi</td>
+            </tr>
+            <tr>
+                <td class="label">Instansi Sekolah</td>
+                <td>SMAN 1 Sooko Kab. Mojokerto</td>
+            </tr>
+            <tr>
+                <td class="label">Materi Pokok</td>
+                <td>Kelompok Sosial dan Dinamikanya</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Petunjuk Singkat -->
+    <div class="instructions">
+        <strong>Petunjuk Penggunaan Alat Peraga:</strong><br>
+        Gunakan mouse (klik & geser) atau layar sentuh untuk memutar objek 3D di bawah ini. Klik pada nomor atau ikon <strong>Anotasi</strong> yang tersedia untuk membaca penjelasan detail materi kelompok sosial. Setelah memahami materi, silakan kerjakan latihan soal evaluasi mandiri di bagian bawah halaman.
+    </div>
+
+    <!-- Area Utama Visualisasi Objek 3D / AR Web Player -->
+    <div class="main-content">
+        <div class="section-title">Visualisasi Alat Peraga 3D</div>
+        <div class="assemblr-frame-wrapper">
+            <!-- Sumber Link bersumber dari dokumentasi penugasan editor Assemblr Studio -->
+            <iframe src="https://edu.assemblrworld.com/web-player/U39mfnupE8Lr5hZbKyv" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Bagian Evaluasi Interaktif (Quiz) -->
+    <div class="quiz-section">
+        <div class="quiz-title">Evaluasi & Pemahaman Siswa</div>
+        <form id="evaluationForm">
+            
+            <!-- Pertanyaan 1 -->
+            <div class="question-block">
+                <div class="question-text">1. Salah satu syarat terbentuknya kelompok sosial menurut sosiolog Soerjono Soekanto adalah...</div>
+                <ul class="options-list">
+                    <li class="option-item">
+                        <label><input type="radio" name="question1" value="A"> A. Memiliki kesamaan warna pakaian atau atribut visual saat berkumpul</label>
+                    </li>
+                    <li class="option-item">
+                        <label><input type="radio" name="question1" value="B"> B. Adanya kesadaran sebagai bagian dari kelompok dan adanya hubungan timbal balik antaranggota</label>
+                    </li>
+                    <li class="option-item">
+                        <label><input type="radio" name="question1" value="C"> C. Memiliki domisili yang sama tanpa perlu berinteraksi satu sama lain</label>
+                    </li>
+                    <li class="option-item">
+                        <label><input type="radio" name="question1" value="D"> D. Adanya paksaan dari pihak luar untuk bersatu dalam jangka waktu pendek</label>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Pertanyaan 2 -->
+            <div class="question-block">
+                <div class="question-text">2. Dari sudut pandang dinamika kelompok, konflik internal yang terjadi di dalam kelompok sosial merupakan contoh pemicu perubahan yang berasal dari...</div>
+                <ul class="options-list">
+                    <li class="option-item">
+                        <label><input type="radio" name="question2" value="A"> A. Faktor eksternal kelompok</label>
+                    </li>
+                    <li class="option-item">
+                        <label><input type="radio" name="question2" value="B"> B. Pengaruh struktur alam sekitar</label>
+                    </li>
+                    <li class="option-item">
+                        <label><input type="radio" name="question2" value="C"> C. Faktor internal kelompok</label>
+                    </li>
+                    <li class="option-item">
+                        <label><input type="radio" name="question2" value="D"> D. Intervensi kebijakan politik global</label>
+                    </li>
+                </ul>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="evaluateQuiz()">Kirim & Hitung Skor Anda</button>
+        </form>
+    </div>
+
+    <!-- Footer Halaman -->
+    <div class="footer">
+        Dibuat oleh Dwi Rachmawati, S.Sos | SMAN 1 Sooko Kab. Mojokerto &copy; 2026. All Rights Reserved.
+    </div>
+</div>
+
+<script>
+    function evaluateQuiz() {
+        var ans1 = document.querySelector('input[name="question1"]:checked');
+        var ans2 = document.querySelector('input[name="question2"]:checked');
+        
+        if (!ans1 || !ans2) {
+            alert("⚠️ Harap selesaikan dan pilih jawaban untuk kedua soal di atas terlebih dahulu!");
+            return;
+        }
+
+        var totalScore = 0;
+        var message = "";
+
+        // Koreksi jawaban Soal 1 (Kunci: B)
+        if (ans1.value === "B") {
+            totalScore += 50;
+        }
+
+        // Koreksi jawaban Soal 2 (Kunci: C)
+        if (ans2.value === "C") {
+            totalScore += 50;
+        }
+
+        // Penentuan Feedback teks berdasarkan total nilai
+        if (totalScore === 100) {
+            message = "Luar biasa! Semua jawaban Anda benar. Anda telah memahami materi Kelompok Sosial dengan sangat baik.";
+        } else if (totalScore === 50) {
+            message = "Cukup baik. Salah satu jawaban Anda benar. Silakan baca kembali poin anotasi pada media 3D di atas.";
+        } else {
+            message = "Nilai Anda masih kurang. Mari pelajari kembali materi kelompok sosial dan dinamikanya secara lebih teliti.";
+        }
+
+        alert("=================================\n" +
+              "     HASIL EVALUASI MANDIRI     \n" +
+              "=================================\n\n" +
+              "Skor Anda: " + totalScore + " / 100\n" +
+              "Keterangan: " + message);
+    }
+</script>
+
+</body>
+</html>
